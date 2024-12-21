@@ -49,22 +49,27 @@
 // }
 // main();
 
-async function fetchData() {
-	return new Promise((resolve, reject) =>{
-		setTimeout(() =>{
-			reject("Data did not load successfully!");
-		},2000)
-	})
-}
+// async function feachData() {
+// 	return new Promise((resolve, reject) =>{
+// 		setTimeout(() =>{
+// 		if (Math.random() > 0.5){
+// 			resolve("successfully");
+// 		}else{
+// 			reject("error while loading");
+// 			}
+// 		},2000);	
+// 	});
+// }
 
-async function printConsol() {
-	console.log("Fetching data from server...");
-	try{
-		const result = await fetchData();
-		console.log(result);
-	}catch(err){
-		console.log("An error occurred:", err);
-	}
-}
+// async function printOper() {
+// 	console.log("data loading result");
+// 	try{
+// 		const result = await feachData();
+// 		console.log(result);
+// 	}catch(err){
+// 		console.error("An error occurred:",err);
+// 	}
+// }
 
-printConsol()
+// printOper();
+
