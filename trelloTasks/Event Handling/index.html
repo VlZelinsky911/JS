@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event Handling</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Форма реєстрації</h1>
+<form id="registration-form">
+  <div class="form-group">
+    <label for="name">Ім'я:</label>
+    <input type="text" id="name" name="name" required>
+    <div class="error-message" id="name-error">Ім'я обов'язкове.</div>
+    <div class="hint" id="name-hint">Введіть ваше ім'я.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Електронна пошта:</label>
+    <input type="email" id="email" name="email" required>
+    <div class="error-message" id="email-error">Некоректна електронна пошта.</div>
+    <div class="hint" id="email-hint">Введіть вашу електронну адресу.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required>
+    <div class="error-message" id="password-error">Пароль має містити мінімум 6 символів.</div>
+    <div class="hint" id="password-hint">Введіть надійний пароль.</div>
+  </div>
+
+  <button type="submit">Зареєструватися</button>
+
+	
+	<script src="script.js"></script>
+</body>
+</html>
