@@ -1,0 +1,83 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+body{
+width: 100%;
+height: 100%;
+background: #262626;
+}
+
+h1{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	color: #fff;
+	padding: 15px;
+}
+.conteiner .img-conteiner{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.conteiner .img-conteiner .img{
+width: 350px;
+height: 230px;
+border: 10px solid #fff;
+overflow: hidden;
+border-radius: 20px;
+}
+
+.conteiner .img-conteiner .img 
+img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+cursor: pointer;
+transition: 0.5s;
+}
+
+.conteiner .img-conteiner .img 
+img:hover{
+transform: scale(1.1);
+}
+
+.conteiner .pop-up{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgb(0,0,0,.8);
+display: none;
+}
+.conteiner .pop-up img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 700px;
+	border: 5px solid #fff;
+	border-radius: 15px;
+}
+.conteiner .pop-up span{
+	position: fixed;
+	top: 10px;
+	right:20px;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+	font-size: 50px;
+	font-weight: 900;
+	line-height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
