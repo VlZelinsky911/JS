@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кешувальний Проксі-Сервер за допомогою Service Worker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Програмується кешувальний проксі-сервер за допомогою Service Worker!</h1>
+
+  <button onclick="getCacheStats()">Отримати Статистику Кешу</button>
+
+  <script>
+    // Перевірка наявності підтримки Service Worker в браузері
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker зареєстрований', registration);
+          })
+          .catch(error => {
+            console.log('Помилка реєстрації Service Worker', error);
+          });
+      });
+    }
+
+    // Функція для отримання статистики кешу
+    function getCacheStats() {
+      if (navigator.serviceWorker.controller) {
+        navigator.serviceWorker.controller.postMessage('getCacheStats');
+        navigator.serviceWorker.controller.onmessage = (event) => {
+          const { cacheHits, cacheMisses } = event.data;
+          alert(`Запити з кешу: ${cacheHits}, Запити з мережі: ${cacheMisses}`);
+        };
+      }
+    }
+  </script>
+
+  <script src="service-worker.js"></script>
+</body>
+</html>
