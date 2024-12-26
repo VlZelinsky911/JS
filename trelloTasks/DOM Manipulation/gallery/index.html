@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Динамічна Галерея</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="conteiner">	
+	<h1>Динамічна Галерея</h1>
+
+	<form id="addImageForm">
+			<input type="url" id="imageUrl" placeholder="URL зображення" required>
+			<input type="text" id="imageDescription" placeholder="Опис зображення" required>
+			<button type="submit">Додати зображення</button>
+	</form>
+</div>
+	<div id="gallery"></div>
+
+	<div id="lightbox">
+			<span class="nav prev">&larr;</span>
+			<span class="nav next">&rarr;</span>
+			<img src="" alt="Large View">
+			<span class="close">&times;</span>
+	</div>
+
+<script src="script.js"></script>
+</body>
+</html>
