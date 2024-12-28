@@ -1,109 +1,80 @@
-const defaultState = {
-	theme: 'light',        // Тема інтерфейсу
-	language: 'en',        // Мова інтерфейсу
-	isLoggedIn: false,     // Статус логіна
+let defaultState = {
+	theme: 'dark',
+	language: 'en'
 };
 
-// Ініціалізація стану
-if (!localStorage.getItem('userSettings')) {
-	localStorage.setItem('userSettings', JSON.stringify(defaultState));
+if (!localStorage.getItem('userSetting')) {
+	localStorage.setItem('userSetting', JSON.stringify(defaultState));
+} else {
+	let userSetting = JSON.parse(localStorage.getItem('userSetting'));
+	console.log('Завантажено налаштування:', userSetting);
+
+	document.body.className = userSetting.theme;
+	updateLanguage(userSetting.language);
+	document.getElementById('theme-select').value = userSetting.theme;
+	document.getElementById('language-select').value = userSetting.language;
 }
 
-// Функція для оновлення стану
-function updateState(newState) {
-	try {
-			const currentState = JSON.parse(localStorage.getItem('userSettings')) || defaultState;
-			const updatedState = { ...currentState, ...newState };
-			localStorage.setItem('userSettings', JSON.stringify(updatedState));
-			console.log('Стан оновлено:', updatedState);
-			applySettings(updatedState);
-	} catch (error) {
-			console.error('Помилка при оновленні стану:', error);
-	}
-}
+window.addEventListener('storage', function(event) {
+	if (event.key === 'userSetting') {
+			let updatedUserSetting = JSON.parse(event.newValue);
+			console.log('Оновлені налаштування:', updatedUserSetting);
 
-// Слухач події `storage` для синхронізації між вкладками
-window.addEventListener('storage', (event) => {
-	if (event.key === 'userSettings') {
-			try {
-					const updatedState = JSON.parse(event.newValue);
-					console.log('Стан синхронізовано з іншою вкладкою:', updatedState);
-					applySettings(updatedState);
-			} catch (error) {
-					console.error('Помилка при синхронізації стану:', error);
-			}
+			document.body.className = updatedUserSetting.theme;
+			updateLanguage(updatedUserSetting.language);
+			document.getElementById('theme-select').value = updatedUserSetting.theme;
+			document.getElementById('language-select').value = updatedUserSetting.language;
+			showNotification(`Тема змінена на ${updatedUserSetting.theme === 'dark' ? 'темну' : 'світлу'} мовою ${updatedUserSetting.language === 'en' ? 'English' : 'Українська'}`);
 	}
 });
 
-// Функція для застосування стану (зміна теми, мови тощо)
-function applySettings(state) {
-	// Приклад: змінити тему через data-атрибут
-	document.body.dataset.theme = state.theme;
-	// Відобразити поточну мову
-	document.getElementById('currentLanguage').innerText = `Language: ${state.language}`;
-	// Відобразити статус логіна
-	document.getElementById('currentLoginStatus').innerText = state.isLoggedIn
-			? 'Status: Logged In'
-			: 'Status: Logged Out';
+function toggleTheme() {
+	let newTheme = document.getElementById('theme-select').value;
+	
+	let settings = JSON.parse(localStorage.getItem('userSetting'));
+	settings.theme = newTheme;
+	localStorage.setItem('userSetting', JSON.stringify(settings));
+	
+	document.body.className = newTheme;
+	showNotification(`Тема змінена на ${newTheme}`);
 }
 
-// Встановлюємо початкові налаштування
-applySettings(JSON.parse(localStorage.getItem('userSettings')));
+function toggleLanguage() {
+	let newLanguage = document.getElementById('language-select').value;
+	
+	let settings = JSON.parse(localStorage.getItem('userSetting'));
+	settings.language = newLanguage;
+	localStorage.setItem('userSetting', JSON.stringify(settings));
+	
+	updateLanguage(newLanguage);
+	showNotification(`Мова змінена на ${newLanguage === 'en' ? 'English' : 'Українська'}`);
+}
 
-// Обробка помилок: перевіряємо квоту LocalStorage
-function checkQuota() {
-	try {
-			localStorage.setItem('quotaTest', 'test');
-			localStorage.removeItem('quotaTest');
-	} catch (error) {
-			if (error.code === 22 || error.name === 'QuotaExceededError') {
-					console.error('LocalStorage досяг ліміту квоти!');
-			} else {
-					console.error('Помилка LocalStorage:', error);
+function updateLanguage(language) {
+	const translations = {
+			en: {
+					title: 'App',
+					changeTheme: 'Change Theme',
+					changeLanguage: 'Change Language'
+			},
+			uk: {
+					title: 'Додаток',
+					changeTheme: 'Змінити тему',
+					changeLanguage: 'Змінити мову'
 			}
-	}
+	};
+
+	document.getElementById('app-title').textContent = translations[language].title;
+	document.querySelectorAll('label')[0].textContent = translations[language].changeTheme;
+	document.querySelectorAll('label')[1].textContent = translations[language].changeLanguage;
+
 }
 
-// Приклад використання: зміна теми
-document.getElementById('changeTheme').addEventListener('click', () => {
-	const currentState = JSON.parse(localStorage.getItem('userSettings'));
-	const newTheme = currentState.theme === 'light' ? 'dark' : 'light';
-	updateState({ theme: newTheme });
-});
-
-// Приклад використання: зміна мови
-document.getElementById('changeLanguage').addEventListener('click', () => {
-	const currentState = JSON.parse(localStorage.getItem('userSettings'));
-	const newLanguage = currentState.language === 'en' ? 'uk' : 'en';
-	updateState({ language: newLanguage });
-});
-
-// Приклад використання: зміна статусу логіна
-document.getElementById('toggleLoginStatus').addEventListener('click', () => {
-	const currentState = JSON.parse(localStorage.getItem('userSettings'));
-	updateState({ isLoggedIn: !currentState.isLoggedIn });
-});
-
-// Очищення застарілих даних
-function cleanOldData() {
-	const keysToKeep = ['userSettings'];
-	Object.keys(localStorage).forEach((key) => {
-			if (!keysToKeep.includes(key)) {
-					localStorage.removeItem(key);
-			}
-	});
-	console.log('Застарілі дані очищено.');
-}
-
-// Шифрування даних перед збереженням
-function encryptData(data, key = 'secret') {
-	return btoa(`${key}:${JSON.stringify(data)}`);
-}
-
-// Розшифрування даних
-function decryptData(encryptedData, key = 'secret') {
-	const decrypted = atob(encryptedData);
-	const [storedKey, jsonData] = decrypted.split(':');
-	if (storedKey !== key) throw new Error('Невірний ключ шифрування!');
-	return JSON.parse(jsonData);
+function showNotification(message) {
+	const notification = document.getElementById('notification');
+	notification.textContent = message;
+	notification.classList.remove('hidden');
+	setTimeout(() => {
+			notification.classList.add('hidden');
+	}, 3000);
 }

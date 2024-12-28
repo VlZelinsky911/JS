@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Синхронізація стану</title>
+    <title>Додаток з темами та мовами</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Мульти-табова синхронізація стану</h1>
-    <div id="currentLanguage">Language: en</div>
-    <div id="currentLoginStatus">Status: Logged Out</div>
-    <button id="changeTheme">Змінити тему</button>
-    <button id="changeLanguage">Змінити мову</button>
-    <button id="toggleLoginStatus">Змінити статус логіна</button>
+<body class="dark">
+    <div class="container">
+        <h1 id="app-title">Додаток</h1>
+        <label for="theme-select">Виберіть тему:</label>
+        <select id="theme-select" onchange="toggleTheme()">
+            <option value="dark">Темна</option>
+            <option value="light">Світла</option>
+        </select>
+        <label for="language-select">Виберіть мову:</label>
+        <select id="language-select" onchange="toggleLanguage()">
+            <option value="en">English</option>
+            <option value="uk">Українська</option>
+        </select>
+        <div id="notification" class="hidden"></div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
