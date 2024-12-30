@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Додаток з темами та мовами</title>
+    <title>App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark">
     <div class="container">
-        <h1 id="app-title">Додаток</h1>
-        <label for="theme-select">Виберіть тему:</label>
-        <select id="theme-select" onchange="toggleTheme()">
-            <option value="dark">Темна</option>
-            <option value="light">Світла</option>
+        <h1 id="app-title">App</h1>
+        <label for="theme-select">Change Theme</label>
+        <select id="theme-select">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
         </select>
-        <label for="language-select">Виберіть мову:</label>
-        <select id="language-select" onchange="toggleLanguage()">
+        <label for="language-select">Change Language</label>
+        <select id="language-select">
             <option value="en">English</option>
             <option value="uk">Українська</option>
         </select>
         <div id="notification" class="hidden"></div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
