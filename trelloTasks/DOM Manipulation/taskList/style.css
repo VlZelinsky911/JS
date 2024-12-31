@@ -1,0 +1,135 @@
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f4f4f9;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 100vh;
+	color: #333;
+}
+
+h1 {
+	margin-top: 20px;
+	font-size: 2rem;
+	color: #444;
+}
+
+#taskForm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px 0;
+}
+
+#taskInput {
+	padding: 10px;
+	font-size: 1rem;
+	width: 300px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#taskForm button {
+	padding: 10px 15px;
+	font-size: 1rem;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+#taskForm button:hover {
+	background-color: #0056b3;
+}
+
+#filters {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+#filters button {
+	padding: 5px 10px;
+	background-color: #6c757d;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#filters button:hover {
+	background-color: #5a6268;
+}
+
+#filters button[data-filter="all"] {
+	background-color: #28a745;
+}
+
+#filters button[data-filter="completed"] {
+	background-color: #17a2b8;
+}
+
+#filters button[data-filter="pending"] {
+	background-color: #ffc107;
+}
+
+#taskList {
+	width: 400px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#taskList li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: white;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#taskList li:nth-child(odd) {
+	background-color: #f9f9f9;
+}
+
+#taskList input[type="checkbox"] {
+	margin-right: 15px;
+	transform: scale(1.2);
+	cursor: pointer;
+}
+
+#taskList span {
+	flex-grow: 1;
+	font-size: 1rem;
+}
+
+#taskList button {
+	padding: 5px 10px;
+	background-color: #dc3545;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#taskList button:hover {
+	background-color: #c82333;
+}
+
+#taskList span {
+	transition: text-decoration 0.3s ease;
+}
+
+#taskList input[type="checkbox"]:checked + span {
+	text-decoration: line-through;
+	color: #888;
+}
