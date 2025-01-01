@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact management</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-conteiner">
+<input type="text" id="search" placeholder="Пошук за ім'ям або номером телефону">
+
+<h1>Contact management</h1>
+<form id='contactForm'>
+<label for="name">Name:</label>
+<input type="text" id="name" required>
+
+<label for="phone">Phone number:</label>
+<input type="text" id="phone" required>
+
+<button type="submit" id="submitBtn">Add Contact</button>
+</form>
+
+<h2>Contact List</h2>
+<ul id="contactList"></ul>
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>
