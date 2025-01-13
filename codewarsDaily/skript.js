@@ -1,4 +1,4 @@
-//Given a non-empty array of numbers, for example [1, 2, 3, 4, 5]. 
+//Given a non-empty array of numbers, for example [1, 2, 3, 4, 5].
 // You need to create a function that returns the result of multiplying all the numbers in this array.
 
 //Example
@@ -11,14 +11,12 @@
 // let number = [1,2,3,5,6,7];
 // console.log(multiplyArray(number));
 
-//Your task is to make two functions ( max and min, or maximum and minimum, etc., 
-// depending on the language ) that receive a list of integers as input, 
+//Your task is to make two functions ( max and min, or maximum and minimum, etc.,
+// depending on the language ) that receive a list of integers as input,
 // and return the largest and lowest number in that list, respectively. Each function returns one number.
-
 
 // const min = (list) => Math.min(...list);
 // const max = (list) => Math.max(...list);
-
 
 // let number1 = [2,1,3,5,6,7,99,77];
 // console.log(max(number1));
@@ -54,7 +52,6 @@
 // let number2 = [2,1,3,5,6,7,99,77];
 // console.log(check(number2, 99));
 
-
 //Write a function that removes the spaces from the string, then return the resultant string.
 
 // function noSpace(x) {
@@ -77,11 +74,10 @@
 // console.log(highAndLow("1 12 223 14 15"));
 // console.log(highAndLow("1 211 31 412 5"));
 
-
 //You get an array of numbers, return the sum of all of the positives ones.
 
 // Example
-// [1, -4, 7, 12] => 1+7+12=20 
+// [1, -4, 7, 12] => 1+7+12=20
 // Note
 // If there is nothing to sum, the sum is default to 0.
 
@@ -94,7 +90,6 @@
 //   }, 0);
 // }
 // console.log(positiveSum([1,-2,3,4,5]));
-
 
 // Дано масив цілих чисел у вигляді рядків і чисел, повернути суму значень масиву так, ніби всі були числами.
 // Поверніть свою відповідь у вигляді числа.
@@ -115,7 +110,7 @@
 // console.log(simpleMultiplication(3));
 // console.log(simpleMultiplication(5));
 
-//Дано невід’ємне ціле число, 3наприклад, поверніть рядок із шумом: "1 sheep...2 sheep...3 sheep...". 
+//Дано невід’ємне ціле число, 3наприклад, поверніть рядок із шумом: "1 sheep...2 sheep...3 sheep...".
 //Введення завжди буде дійсним, тобто жодних від’ємних цілих чисел.
 
 // var countSheep = function (num){
@@ -129,12 +124,114 @@
 // console.log(countSheep(-3));
 // console.log(countSheep(6));
 
-
-
 //Complete the square sum function so that it squares each number passed into it and then sums the results together.
 
-function squareSum(numbers){
-return numbers.reduce((acc , i) => Math.pow(i, 2) + acc);
-}
+// function squareSum(numbers){
+// return numbers.reduce((acc , i) => Math.pow(i, 2) + acc);
+// }
 
-console.log(squareSum([0, 3, 4, 5]));
+// console.log(squareSum([0, 3, 4, 5]));
+
+//Create a function with two arguments that will return an array of the first n multiples of x.
+
+// Assume both the given number and the number of times to count will be positive numbers greater than 0.
+
+// Return the results as an array or list ( depending on language ).
+
+// Examples
+// x = 1, n = 10 --> [1,2,3,4,5,6,7,8,9,10]
+// x = 2, n = 5  --> [2,4,6,8,10]
+
+// function countBy(x, n) {
+//   let z = [];
+// 	for(let i = 0; i < n; i++){
+// 		z.push(x * (i + 1));
+// 	}
+//   return z;
+// }
+
+// console.log(countBy(1,10));
+// console.log(countBy(2,5));
+
+// Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
+
+// The binary number returned should be a string.
+
+// Examples:(Input1, Input2 --> Output (explanation)))
+
+// 1, 1 --> "10" (1 + 1 = 2 in decimal or 10 in binary)
+// 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary)
+
+// function addBinary(a, b){
+// let sum = a + b;
+// return sum.toString(2);
+// }
+
+// console.log(addBinary(1,1));
+// console.log(addBinary(5,9));
+// console.log(addBinary(11,11));
+
+// Let's play! You have to return which player won! In case of a draw return Draw!.
+
+// Examples(Input1, Input2 --> Output):
+
+// "scissors", "paper" --> "Player 1 won!"
+// "scissors", "rock" --> "Player 2 won!"
+// "paper", "paper" --> "Draw!"
+
+// const rps = (p1, p2) => {
+//   if (p1 === p2) {
+//     return 'Draw!';
+//   }
+//   if (
+//     (p1 === 'scissors' && p2 === 'paper') ||
+//     (p1 === 'paper' && p2 === 'rock') ||
+//     (p1 === 'rock' && p2 === 'scissors')
+//   ) {
+//     return 'Player 1 won!';
+//   } else {
+//     return 'Player 2 won!';
+//   }
+// };
+
+// console.log(rps('rock', 'scissors'));
+// console.log(rps('scissors', 'paper'));
+// console.log(rps('paper', 'rock'));
+
+
+// Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+
+// Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+
+// Examples:
+
+// Testing: [0, 0, 0, 1] ==> 1
+// Testing: [0, 0, 1, 0] ==> 2
+// Testing: [0, 1, 0, 1] ==> 5
+// Testing: [1, 0, 0, 1] ==> 9
+// Testing: [0, 0, 1, 0] ==> 2
+
+
+// const binaryArrayToNumber = arr => {
+// 	return parseInt(arr.join(''),2);
+// };
+// console.log(binaryArrayToNumber([1, 1, 1, 1]));
+
+
+// In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+
+// Examples
+// makeNegative(1);    // return -1
+// makeNegative(-5);   // return -5
+
+
+function makeNegative(num) {
+	if(num === 0 || num < 0){
+		return num;
+	}else{
+	return -num;
+	}
+}
+console.log(makeNegative(23));
+console.log(makeNegative(0));
+console.log(makeNegative(-23));
