@@ -118,13 +118,23 @@
 //Дано невід’ємне ціле число, 3наприклад, поверніть рядок із шумом: "1 sheep...2 sheep...3 sheep...". 
 //Введення завжди буде дійсним, тобто жодних від’ємних цілих чисел.
 
-var countSheep = function (num){
-  let res = '';
-  for (let i = 1; i <= num; i++) {
-    res += `${i} sheep...`;
-  }
-  return res;
+// var countSheep = function (num){
+//   let res = '';
+//   for (let i = 1; i <= num; i++) {
+//     res += `${i} sheep...`;
+//   }
+//   return res;
+// }
+
+// console.log(countSheep(-3));
+// console.log(countSheep(6));
+
+
+
+//Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+function squareSum(numbers){
+return numbers.reduce((acc , i) => Math.pow(i, 2) + acc);
 }
 
-console.log(countSheep(-3));
-console.log(countSheep(6));
+console.log(squareSum([0, 3, 4, 5]));
