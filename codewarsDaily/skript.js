@@ -225,13 +225,58 @@
 // makeNegative(-5);   // return -5
 
 
-function makeNegative(num) {
-	if(num === 0 || num < 0){
-		return num;
-	}else{
-	return -num;
+// function makeNegative(num) {
+// 	if(num === 0 || num < 0){
+// 		return num;
+// 	}else{
+// 	return -num;
+// 	}
+// }
+// console.log(makeNegative(23));
+// console.log(makeNegative(0));
+// console.log(makeNegative(-23));
+
+
+//Write a function findNeedle() that takes an array full of junk but containing one "needle"
+
+// After your function finds the needle it should return a message (as a string) that says:
+
+// "found the needle at position " plus the index it found the needle, so:
+
+// Example(Input --> Output)
+
+// ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
+// Note: In COBOL, it should return "found the needle at position 6"
+
+// function findNeedle(haystack) {
+// 	let needleIndex = haystack.indexOf('needle');
+
+// 	return `found the needle at position ${needleIndex}`;
+// }
+// console.log(
+// findNeedle(['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago']));
+// console.log(
+//  findNeedle([1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,'needle',1,2,3,4,5,5,6,5,4,32,3,45,54]));
+// console.log(
+//  findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]));
+// console.log(
+//  findNeedle(['3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false]));
+
+
+
+// Write a function which calculates the average of the numbers in a given array.
+
+// Note: Empty arrays should return 0.
+
+function findAverage(array) {
+if(array.length === 0){
+	return 0
+}else{
+	let sum = array.reduce((acc, index) => acc + index,0);
+	return Math.ceil(sum / array.length);
 	}
-}
-console.log(makeNegative(23));
-console.log(makeNegative(0));
-console.log(makeNegative(-23));
+} 
+
+ console.log(findAverage([23,44,1]));
+ console.log(findAverage([]));
+ 
