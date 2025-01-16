@@ -14,7 +14,7 @@ body {
   background: rgba(0, 0, 0, 0.5); 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Легка тінь */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 h1,
 h2 {

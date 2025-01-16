@@ -1,0 +1,51 @@
+body {
+  font-family: "MedievalSharp", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(resource/background__Img.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 800px;
+  gap: 10px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#cityName {
+  width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  text-align: center;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#weatherInfo {
+	text-align: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+#weatherInfo:hover {
+  transform: scale(1.1);
+}
+
+#weatherInfo:active {
+  transform: scale(0.95);
+}
