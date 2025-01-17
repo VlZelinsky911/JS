@@ -198,7 +198,6 @@
 // console.log(rps('scissors', 'paper'));
 // console.log(rps('paper', 'rock'));
 
-
 // Given an array of ones and zeroes, convert the equivalent binary value to an integer.
 
 // Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
@@ -211,19 +210,16 @@
 // Testing: [1, 0, 0, 1] ==> 9
 // Testing: [0, 0, 1, 0] ==> 2
 
-
 // const binaryArrayToNumber = arr => {
 // 	return parseInt(arr.join(''),2);
 // };
 // console.log(binaryArrayToNumber([1, 1, 1, 1]));
-
 
 // In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
 
 // Examples
 // makeNegative(1);    // return -1
 // makeNegative(-5);   // return -5
-
 
 // function makeNegative(num) {
 // 	if(num === 0 || num < 0){
@@ -236,7 +232,6 @@
 // console.log(makeNegative(0));
 // console.log(makeNegative(-23));
 
-
 //Write a function findNeedle() that takes an array full of junk but containing one "needle"
 
 // After your function finds the needle it should return a message (as a string) that says:
@@ -245,7 +240,7 @@
 
 // Example(Input --> Output)
 
-// ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
+// ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5"
 // Note: In COBOL, it should return "found the needle at position 6"
 
 // function findNeedle(haystack) {
@@ -262,21 +257,69 @@
 // console.log(
 //  findNeedle(['3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false]));
 
-
-
 // Write a function which calculates the average of the numbers in a given array.
 
 // Note: Empty arrays should return 0.
 
-function findAverage(array) {
-if(array.length === 0){
-	return 0
-}else{
-	let sum = array.reduce((acc, index) => acc + index,0);
-	return Math.ceil(sum / array.length);
-	}
-} 
+// function findAverage(array) {
+// if(array.length === 0){
+// 	return 0
+// }else{
+// 	let sum = array.reduce((acc, index) => acc + index,0);
+// 	return Math.ceil(sum / array.length);
+// 	}
+// }
 
- console.log(findAverage([23,44,1]));
- console.log(findAverage([]));
- 
+//  console.log(findAverage([23,44,1]));
+//  console.log(findAverage([]));
+
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive.
+// Implement a function that determines whether a string that contains only letters is an isogram.
+// Assume the empty string is an isogram. Ignore letter case.
+
+// function isIsogram(str){
+// str = str.toLowerCase();
+// let arr = new Set();
+
+// for(let char of str){
+// 	if(arr.has(char)){
+// 		return false;
+// 	}
+// 	arr.add(char);
+// }
+// return true;
+// }
+
+// console.log(isIsogram("Dermatoglyphics"));
+// console.log(isIsogram("Dermatoglyphicss"));
+
+// Make a program that filters a list of strings and returns a list with only your friends name in it.
+
+// If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+
+// function friend(friends){
+// return friends.filter(name => name.length <= 4);
+// }
+
+// console.log(friend(["Ryan", "Kieran", "Jason", "Yous"]));
+
+// Task
+// Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
+
+// The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+
+// Mind the input validation.
+
+// function sumArray(arr) {
+//   if (arr.length === 0 || arr.length < 2) {
+//     return 0;
+//   }
+//   let min = Math.min(...arr);
+//   let max = Math.max(...arr);
+//   return arr
+// 	.filter(num => num !== max && num !== min)
+// 	.reduce((acc, num) => acc = num);
+// };
+
+// console.log(sumArray([6, 2, 1, 8, 10])); // 16 (2 + 6 + 8)
+
