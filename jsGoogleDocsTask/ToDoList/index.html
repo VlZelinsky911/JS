@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+		<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+<h1>To-Do List</h1>
+<div class="content">
+		<input type="text" id="taskDescription" placeholder="Опис завдання">
+		<select id="taskPriority">
+				<option value="3">Високий</option>
+				<option value="2">Середній</option>
+				<option value="1">Низький</option>
+		</select>
+		<button id="addTaskButton">Додати завдання</button>
+<button id="sortTasksButton">Сортувати за пріоритетом</button>
+</div>
+<div id="taskList">
+
+</div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
