@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор Бюджету</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, select, button {
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор Бюджету</h1>
+        <form id="entryForm">
+            <input type="number" id="amount" placeholder="Сума" required>
+            <input type="text" id="category" placeholder="Категорія" required>
+            <input type="date" id="date" required>
+            <select id="type" required>
+                <option value="income">Дохід</option>
+                <option value="expense">Витрата</option>
+            </select>
+            <button type="submit">Додати Запис</button>
+        </form>
+        <h2>Баланс</h2>
+        <p id="balance">Доходи: 0 | Витрати: 0 | Баланс: 0</p>
+        <h2>Записи</h2>
+        <table id="entriesTable">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Категорія</th>
+                    <th>Тип</th>
+                    <th>Сума</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
