@@ -39,8 +39,6 @@ function updateTable() {
 	});
 }
 
-function addEntry(event) {
-	event.preventDefault();
 
 	const amount = parseFloat(document.getElementById("amount").value);
 	const category = document.getElementById("category").value;
