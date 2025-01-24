@@ -323,3 +323,113 @@
 
 // console.log(sumArray([6, 2, 1, 8, 10])); // 16 (2 + 6 + 8)
 
+
+
+// Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+
+// Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+
+// function lovefunc(flower1, flower2){
+// if(flower1 % 2!== flower2 % 2){
+// 	return true;
+// }else{
+// 	return false;
+// 	}
+// }
+
+// console.log(lovefunc(7,8));
+// console.log(lovefunc(7,7));
+// console.log(lovefunc(17,8));
+
+
+// You are given two interior angles (in degrees) of a triangle.
+
+// Write a function to return the 3rd.
+
+// Note: only positive integers will be tested.
+
+// function otherAngle(a, b) {
+//   const totalAngle = 180;
+//   const thirdAngle  = totalAngle - a - b;
+//   return thirdAngle;
+// }
+
+
+
+// We need a function that can transform a number (integer) into a string.
+
+// What ways of achieving this do you know?
+
+// function numberToString(num) {
+//   return num.toString();
+// }
+
+
+// In this kata you will create a function 
+// that takes a list of non-negative integers and strings and returns 
+// a new list with the strings filtered out.
+
+// function filter_list(l) {
+// let numArr = [];
+// l.forEach(element => {
+// 	if(typeof element === "number"){
+// 		numArr.push(element);
+// 	}
+// });
+// return numArr;
+// }
+
+// console.log(filter_list([1,4,5,"List","1","2"]));
+
+
+// Ви живете в місті Картезія, де всі дороги викладені в ідеальну сітку. Ви прийшли на десять хвилин раніше, тому вирішили скористатися можливістю, щоб піти на коротку прогулянку. Місто надає своїм громадянам програму для створення прогулянок на їхніх телефонах — щоразу, коли ви натискаєте кнопку, вона надсилає вам рядок із однієї літери, що представляють маршрути прогулянки (наприклад, ['n', 's', 'w', 'е']). Ви завжди проходите лише один квартал для кожної літери (напрямку), і ви знаєте, що вам знадобиться одна хвилина, щоб подолати один квартал міста, тому створіть функцію, яка повертатиме значення true, якщо прогулянка, яку вам надає програма, займе у вас рівно десять хвилин (ви не хочу ні рано, ні пізно!) і, звичайно, поверне вас до вихідної точки. В іншому випадку поверніть false .
+
+// Примітка : ви завжди отримуватимете дійсний масив, що містить випадковий набір літер напрямків (лише «n», «s», «e» або «w»). Це ніколи не дасть вам порожній масив (це не прогулянка, це стояння!).
+
+// function isValidWalk(walk) {
+//  if(walk.length === 0){
+// 	return;
+//  }
+//  if(walk.length !== 10){
+// 	return false;
+//  }
+//  let x = 0;
+//  let y = 0;
+//  for(let i = 0; i < walk.length; i++){
+// 	switch(walk[i]){
+// 		case "n": y++; break;
+// 		case"s" : y--; break;
+// 		case"e" : x++; break;
+// 		case"w" : x--; break;
+// 	}
+//  }
+//  return x === 0 && y === 0;
+// }
+
+// console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']));
+// console.log(isValidWalk(['']));
+// console.log(isValidWalk(['n','n','n','s','n','s','n','s','n','s']));
+
+
+
+// Цього разу ні історії, ні теорії. Наведені нижче приклади показують, як написати функцію accum:
+
+// приклади:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+// Параметр accum — це рядок, який містить лише літери з a..zі A..Z.
+
+// function accum(s) {
+// return s
+// 							.split("")
+// 							.map((char, index) => {
+// 								const capitalizedChar = char.toUpperCase();
+// 								const repeatedChars = char.toLocaleLowerCase().repeat(index);
+// 								return capitalizedChar + repeatedChars;
+// 							})
+// 							.join("-")
+// }
+
+// console.log(accum("abcd"));
+
