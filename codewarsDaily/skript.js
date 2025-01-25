@@ -433,3 +433,74 @@
 
 // console.log(accum("abcd"));
 
+
+
+// Write a function that takes an array of numbers and returns the sum of all even numbers in that array.
+
+// function sumEvenNumbers(arr) {
+//   return arr.filter(num => num % 2 === 0).reduce((sum, num) => sum + num, 0);
+// }
+
+// console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6]));
+
+
+
+// Write a function that takes two words and checks whether they are anagrams 
+// (that is, made up of the same characters in any order).
+
+// function isAnagram(word1, word2) {
+//   const normalize = str => str.toLowerCase().split('').sort().join('');
+//   return normalize(word1) === normalize(word2);
+// }
+
+// console.log(isAnagram("listen", "silent"));
+// console.log(isAnagram("hello", "world")); 
+
+
+// Write a function that takes a sentence (a string) and returns a sentence where each word begins with an uppercase letter and all other letters are lowercase.
+
+// function capitalizeSentence(sentence) {
+//   return sentence
+//     .split(' ')
+//     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+//     .join(' ');
+// }
+
+// console.log(capitalizeSentence("прИвіт як сПРАви?"));
+
+
+// Write a function that accepts a string (sentence) and returns the length of the shortest word.
+
+// function findShortestWordLength(sentence) {
+//   return sentence.split(' ').reduce((shortest, word) => {
+//     return Math.min(shortest, word.length);
+//   }, Infinity);
+// }
+
+
+// console.log(findShortestWordLength("Напиши щось цікаве та корисне"));
+
+
+
+// Write a function that checks whether a string is a palindrome (reads the same on both sides).
+
+// function isPalindrome(str) {
+//   const cleaned = str.toLowerCase().replace(/[^a-zа-я0-9]/g, '');
+//   return cleaned === cleaned.split('').reverse().join('');
+// }
+
+
+
+
+// Write a function that sorts an array of numbers by the sum of their digits.
+// If the amounts are the same, keep the original order.
+
+// function sortByDigitSum(arr) {
+//   const digitSum = num => String(num).split('').reduce((sum, digit) => sum + +digit, 0);
+//   return arr.slice().sort((a, b) => {
+//     const sumA = digitSum(a);
+//     const sumB = digitSum(b);
+//     return sumA === sumB ? 0 : sumA - sumB;
+//   });
+// }
+
