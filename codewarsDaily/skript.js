@@ -504,3 +504,49 @@
 //   });
 // }
 
+
+// Write a function that counts how many vowels (a, e, i, o, u) there are in a given string.
+
+// function countVowels(str) {
+//   const vowels = "aeiou";
+//   return str
+//     .toLowerCase()
+//     .split("")
+//     .filter(char => vowels.includes(char)).length;
+// }
+
+
+
+// Write a function that accepts an array of numbers and returns a new array where the numbers are in reverse order.
+
+// function reverseArray(arr) {
+//   return arr.slice().reverse();
+// }
+
+
+// Write a function that checks whether all numbers in an array are positive.
+
+// function allPositive(arr) {
+//   return arr.every(num => num > 0);
+// }
+
+
+// Write a function that calculates the average value of the numbers in the array.
+
+// function calculateAverage(arr) {
+//   if (arr.length === 0) return 0;
+//   return arr.reduce((sum, num) => sum + num, 0) / arr.length;
+// }
+
+// console.log(calculateAverage([1, 2, 3, 4]));
+
+
+
+// Write a function that calculates the factorial of the number n (n!).
+
+// function factorial(n) {
+//   if (n === 0 || n === 1) return 1;
+//   return n * factorial(n - 1);
+// }
+
+
