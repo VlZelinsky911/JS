@@ -550,3 +550,34 @@
 // }
 
 
+// Write a function that counts the number of vowels (a, e, i, o, u) in a string
+
+// function countVowels(str) {
+//   const vowels = "aeiou";
+//   return str
+//     .toLowerCase()
+//     .split("")
+//     .filter(char => vowels.includes(char)).length;
+// }
+
+// Write a function that returns the given string in reverse order.
+
+
+// function reverseString(str) {
+//   return str.split("").reverse().join("");
+// }
+
+
+// Write a function that checks whether a string is a palindrome
+
+
+// function isPalindrome(str) {
+//   const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+//   return cleaned === cleaned.split("").reverse().join("");
+// }
+
+// Write a function that checks whether all numbers in an array are positive
+
+// function allPositive(arr) {
+//   return arr.every(num => num > 0);
+// }
